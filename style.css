@@ -1516,8 +1516,111 @@ body {
 }
 .service-image-box img { width: 100%; height: auto; display: block; }
 
-/* Responsive */
+
+/* ==========================================================================
+   COMPLETE MOBILE RESPONSIVE STYLES (UPDATED WITH MENU)
+   ========================================================================== */
+
+/* Hamburger Icon Style */
+.mobile-menu-btn {
+    display: none; /* পিসিতে হাইড */
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+.mobile-menu-btn span {
+    width: 28px;
+    height: 3px;
+    background-color: #12e819; /* আপনার থিম কালার */
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .container { padding: 0 30px; }
+    .hero-flex { gap: 30px; }
+    .packages-grid, .services-grid, .works-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
-    .content-grid { flex-direction: column; }
-    .sidebar { border-left: none; border-top: 1px solid #1a1a1a; padding-left: 0; padding-top: 30px; }
+    /* 1. Navbar & Mobile Menu Logic */
+    body { padding-top: 70px; }
+    header.navbar-section { padding: 5px 0; }
+    .logo img { height: 45px; }
+
+    .mobile-menu-btn { display: flex; } /* মোবাইলে আইকন দেখাবে */
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* স্ক্রিনের বাইরে থাকবে */
+        width: 80%;
+        height: 100vh;
+        background-color: #000000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        z-index: 1000;
+        display: flex !important; /* Force flex for JS toggle */
+    }
+
+    .nav-menu.active { right: 0; } /* মেনু স্লাইড হয়ে আসবে */
+
+    /* Animation for Hamburger to X */
+    .mobile-menu-btn.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* 2. Layout Resets */
+    .hero-flex, .content-flex, .mja-grid, .testimonial-wrapper, .content-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* 3. Hero Section */
+    .hero-section { padding: 40px 0 150px 0; }
+    .hero-content h1:not(.agency-title) { font-size: 32px; margin-bottom: 25px; }
+    .hero-image { justify-content: center; margin-top: 30px; }
+    .hero-image img { max-width: 100%; }
+    .agency-title { font-size: 18px; letter-spacing: 2px; }
+
+    /* 4. Feature Cards */
+    .features { grid-template-columns: 1fr; margin-top: -100px; gap: 20px; }
+    .feature-card { padding: 35px 25px; }
+
+    /* 5. Sections Fix */
+    .left-column, .right-column { padding: 0; border: none; flex: unset; }
+    .left-column { align-items: center; margin-bottom: 30px; }
+    .left-column h1 { font-size: 30px; }
+    .main-desc, .sub-desc { text-align: center; font-size: 14px; }
+
+    /* 6. Grids */
+    .services-grid, .packages-grid, .works-grid, .mja-content-left { grid-template-columns: 1fr; gap: 15px; }
+    .service-card { justify-content: center; gap: 15px; }
+    .package-card { padding: 30px 20px; }
+
+    /* 7. About & Sidebar */
+    .mja-about-banner img { height: 250px; }
+    .mja-info-box { flex-direction: column; text-align: center; }
+    .mja-philosophy-card { min-height: 350px; }
+    .details-section { padding: 40px 0; }
+    .sidebar { border-left: none; border-top: 1px solid #1a1a1a; padding: 30px 0 0; margin-top: 40px; text-align: left; }
+
+    /* 8. CTA & Footer */
+    .cta-banner-red { padding: 35px 15px; }
+    .white-btn-text { font-size: 18px; padding: 12px 25px; width: 100%; }
+    .footer-content { flex-direction: column; text-align: center; gap: 15px; }
+}
+
+@media (max-width: 480px) {
+    .main-works-title, .latest-works-heading { font-size: 26px !important; }
+    .work-card { height: 280px; }
+    .icon-circle { width: 50px; height: 50px; bottom: -25px; }
+    .btn-enquiry { width: 100%; text-align: center; }
 }
