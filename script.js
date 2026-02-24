@@ -1,98 +1,58 @@
-/* --- Modal (Enquiry Form) Logic --- */
-const modal = document.getElementById("enquiryModal");
-const enquiryBtns = document.querySelectorAll(".btn-enquiry"); // Changed to querySelectorAll
-const closeBtn = document.querySelector(".close-btn");
+/* ==========================================================================
+   MJA AGENCY - UPDATED JAVASCRIPT LOGIC
+   ========================================================================== */
 
-// Loop through all enquiry buttons (Hero, Contact, etc.)
-enquiryBtns.forEach(btn => {
-    btn.onclick = function(e) {
-        e.preventDefault(); 
-        if (modal) {
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden"; // Prevent background scroll
-        }
-    }
-});
-
-// Function to close the popup
-if (closeBtn) {
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
-
-// Close if user clicks outside the modal content
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
-
-/* --- Navigation Menu Logic --- */
-const navItems = document.querySelectorAll('.nav-menu li');
-navItems.forEach(item => {
-    item.addEventListener('click', function() {
-        const currentActive = document.querySelector('.nav-menu li.active');
-        if (currentActive) {
-            currentActive.classList.remove('active');
-        }
-        this.classList.add('active');
-    });
-});
-
-/* --- Mobile Menu Toggle Logic --- */
-const menuToggle = document.getElementById('mobile-menu');
-const navMenu = document.querySelector('.nav-menu');
-
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-}
-
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (menuToggle) menuToggle.classList.remove('active');
-        if (navMenu) navMenu.classList.remove('active');
-    });
-});
-
-/* --- Service Details Logic --- */
-function showDetails(type) {
-    const viewSection = document.getElementById('service-view');
-    const title = document.getElementById('view-title');
-    const desc = document.getElementById('view-description');
-    
-    if (viewSection) {
-        viewSection.style.display = 'block';
-        
-        if(type === 'seo') {
-            title.innerText = "Professional SEO Services";
-            desc.innerText = "Partner with the best SEO agency in Bangladesh. We help your website climb search engine rankings through audits, keyword research, and backlinks.";
-        } else if(type === 'cyber') {
-            title.innerText = "Cyber Security & VAPT";
-            desc.innerText = "Protecting your digital assets with expert penetration testing and advanced vulnerability assessments (VAPT).";
-        }
-        viewSection.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-/* --- Smooth Scroll for Packages --- */
-function scrollToPackages() {
-    const pkgSection = document.getElementById('packages');
-    if (pkgSection) {
-        pkgSection.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-
-/* --- Sidebar & Testimonial Logic (DOM Ready) --- */
 document.addEventListener("DOMContentLoaded", function() {
     
-    // 1. Sidebar Active Link Logic
+    // --- 1. Modal (Enquiry Form) Logic ---
+    const modal = document.getElementById("enquiryModal");
+    const enquiryBtns = document.querySelectorAll(".btn-enquiry");
+    const closeBtn = document.querySelector(".close-btn");
+
+    if (modal) {
+        enquiryBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden"; // Scroll বন্ধ হবে
+            });
+        });
+
+        if (closeBtn) {
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            };
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        };
+    }
+
+    // --- 2. Unified Mobile Menu Logic (Fixed) ---
+    const menuBtn = document.getElementById('mobile-menu-btn'); // CSS ID match
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuBtn && navMenu) {
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // লিঙ্ক ক্লিক করলে মেনু বন্ধ হবে
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // --- 3. Sidebar Active Link Logic ---
     let path = window.location.pathname;
     let currentUrl = path.split("/").pop() || "index.html";
 
@@ -108,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // 2. Testimonial Slider Logic
+    // --- 4. Testimonial Slider Logic ---
     const slides = document.querySelectorAll('.testimonial-content');
     const nextBtn = document.querySelector('.next-btn');
     const prevBtn = document.querySelector('.prev-btn');
@@ -116,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let autoSlideTimer;
 
     function showSlide(index) {
-        if (!slides.length) return; // Guard clause
+        if (!slides.length) return;
         
         slides.forEach(slide => slide.classList.remove('active'));
 
@@ -147,3 +107,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
     startAutoSlide();
 });
+
+// --- 5. Service Details Logic (Global functions) ---
+function showDetails(type) {
+    const viewSection = document.getElementById('service-view');
+    const title = document.getElementById('view-title');
+    const desc = document.getElementById('view-description');
+    
+    if (viewSection) {
+        viewSection.style.display = 'block';
+        
+        if(type === 'seo') {
+            title.innerText = "Professional SEO Services";
+            desc.innerText = "Partner with the best SEO agency in Bangladesh. We help your website climb search engine rankings through audits, keyword research, and backlinks.";
+        } else if(type === 'cyber') {
+            title.innerText = "Cyber Security & VAPT";
+            desc.innerText = "Protecting your digital assets with expert penetration testing and advanced vulnerability assessments (VAPT).";
+        }
+        viewSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function scrollToPackages() {
+    const pkgSection = document.getElementById('packages');
+    if (pkgSection) {
+        pkgSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
