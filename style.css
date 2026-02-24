@@ -1,0 +1,1523 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Anton&display=swap');
+
+/* --- Global Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+    color: #000;
+}
+
+/* --- Container (Unified Duplicate) --- */
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navbar --- */
+header.navbar-section {
+    position: fixed;      /* Keep navbar fixed at the top */
+    top: 0;               /* Position it at the very top */
+    left: 0;
+    width: 100%;          /* Full width across the screen */
+    z-index: 1000;        /* Ensure it stays above all other content */
+    background-color: #000000; /* Keep background white while scrolling */
+}
+
+.container.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;   /* Maintain your original padding */
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.nav-menu a:hover {
+    color: #00ff0d;
+}
+
+.nav-menu li.active a {
+    color: #15ff00;
+    border-bottom: 2px solid #40e91e;
+}
+
+/* IMPORTANT: This prevents the hero section from being hidden behind the navbar. 
+   Apply this padding to the body or your first section (hero-section).
+*/
+body {
+    padding-top: 85px; 
+}
+/* --- Hero Section --- */
+.hero-section {
+    padding: 20px 0 200px 0; /* Space for feature cards overlap */
+    background-color: #000000;
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px; 
+}
+
+.hero-content {
+    flex: 1.2; 
+}
+
+/* Tall Font Agency Title */
+.agency-title {
+    padding: 5px 0 50px 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 25px; 
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ffffff;
+    display: inline-block;
+    transform: scaleY(1.0); /* Tall font effect */
+    transform-origin: left;
+    margin-bottom: 10px;
+}
+
+.agency-title span {
+    color: #10fc10;
+    border-bottom: 2px solid #1ee94d;
+    padding-bottom: 2px;
+}
+
+/* Headline Fix (Responsive size) */
+.hero-content h1:not(.agency-title) {
+    font-size: clamp(20px, 6vw, 50px); 
+    font-weight: 800;
+    line-height: 1.05; 
+    margin-bottom: 35px;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+}
+
+.btn-enquiry {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 1.5px solid #1ee939;
+    text-decoration: none;
+    color: #ffffff; /* Image look-er jonno text color-o pink kora bhalo */
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.3s;
+    cursor: pointer;
+    background: transparent;
+
+    /* Sudhumatro ei line-ti add korun */
+    border-radius: 50px; 
+}
+
+.btn-enquiry:hover {
+    background-color: #0ffa1b;
+    color: #050505;
+}
+
+/* --- Fix: Contact section-er bhetore thaka button-er jonno --- */
+.contact-section .btn-contact-form {
+    color: #ffffff; /* Dark background-e text white thaka dorkar */
+    border-radius: 50px; /* Round look-er jonno */
+    border-color: #09ff00; /* Apnar theme color match korar jonno */
+}
+
+.contact-section .btn-contact-form:hover {
+    background-color: #44ff00;
+    border-color: #000000;
+    box-shadow: 0 5px 15px rgba(44, 165, 44, 0.615);
+    color:#000
+}
+/* --- Feature Cards Container --- */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+    margin-top: -120px; 
+    position: relative;
+    z-index: 10;
+    align-items: stretch; /* Keep all cards same height */
+    background-color: #000000;
+}
+
+.feature-card {
+    padding: 50px 35px;
+    /* Main background and text colors for normal state */
+    background-color: #ffffff; 
+    color: #000000;          
+    
+    border: 2px solid #1aff00;
+    
+    box-shadow: 0 15px 50px rgba(47, 70, 40, 0.823);
+    transition: all 0.4s ease; 
+    border-radius: 8px; 
+    cursor: pointer;
+    display: flex; 
+    flex-direction: column;
+}
+
+/* Icon Styles */
+.icon, .icon-red {
+    font-size: 45px;
+    margin-bottom: 25px;
+    display: block;
+    transition: 0.3s;
+    /* Default icon color */
+    color: #000000; 
+}
+
+/* --- Feature Card Hover Effects --- */
+.feature-card:hover {
+    /* Background and shadow colors on hover */
+    background-color: #12f935; 
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); 
+    
+    /* Text color on hover */
+    color: #000000 !important; 
+    transform: translateY(-10px); 
+}
+
+/* Ensures icon, title, and description change color on hover */
+.feature-card:hover .icon,
+.feature-card:hover .icon-red,
+.feature-card:hover h3,
+.feature-card:hover p {
+    color: #000000 !important; 
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.feature-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: justify;
+    margin-top: auto; 
+    opacity: 0.9;
+}
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px); 
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #e8e8e8;
+    margin: 5% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.modal-content p {
+    color: #4c4c4c;
+    margin-bottom: 25px;
+}
+
+#enquiryForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#enquiryForm input, 
+#enquiryForm textarea {
+    width: 100%; 
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #fffdfd;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box; 
+    outline: none;
+    transition: 0.3s;
+}
+
+#enquiryForm input:focus, 
+#enquiryForm textarea:focus {
+    border-color: #25f106;
+    color: #000
+}
+
+.send-btn {
+    background-color: #000000;
+    color: #fdfbfb;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 100%; 
+}
+
+.send-btn:hover {
+    background-color: #49f107;
+    color: #000;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 30px;
+    font-weight: normal;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* --- What We Do Section --- */
+.what-we-do {
+    padding: 100px 0;
+    background-color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 60px;
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+}
+
+.top-line {
+    width: 40px;
+    height: 2px;
+    background-color: #000000;
+    margin-bottom: 20px;
+}
+
+.left-column h1 {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    color: hsl(0, 0%, 100%);
+}
+
+.impact-text {
+    color: hwb(138 2% 0%);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.right-column {
+    flex: 1.2;
+    padding-left: 40px;
+    border-left: 1px solid #eeeeee; 
+}
+
+.main-desc, 
+.sub-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #cacaca;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.portfolio-btn {
+    display: inline-block;
+    background-color: #fbf9f9;
+    color: #100f0f;
+    padding: 16px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    border: 1.5px solid #1ee932;
+}
+
+.portfolio-btn:hover {
+    background-color: #47e91e;
+    color: #000000;
+    box-shadow: 0 8px 20px rgb(41, 124, 40);
+    transform: translateY(-5px);
+}
+
+/* --- Services & Packages Section --- */
+.services-section {
+    padding: 40px 0;
+    background-color: #050505;
+}
+
+.header {
+    margin-bottom: 40px;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* Grid gap management */
+.services-grid + .header {
+    margin-top: 100px; 
+}
+
+.section-title {
+    color:#ffffff
+}
+
+.section-subtitle {
+    color: #17f213;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: #f4f4f4;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: 2px solid #1ee932;
+    border-radius: 5px;
+}
+ 
+.service-card:hover {
+    background-color: #23fb0b;
+    color: #000000;
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* --- 1. Grid Container Styles --- */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* --- 2. Main Card Base Styles --- */
+.package-card {
+    padding: 50px 40px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 100%; 
+    background-color: #ffffff; 
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #1ee932;
+}
+
+/* --- 3. Card Hover State --- */
+.package-card:hover {
+    background-color: #11f801; 
+    /* Force text color to black when hovering the card */
+    color: #000000 !important; 
+    transform: translateY(-5px);
+}
+
+/* --- 4. Icons & Decoration Lines --- */
+.package-icon, .package-icon-red { 
+    font-size: 40px; 
+    margin-bottom: 20px; 
+    color: #000000; 
+    transition: 0.3s ease;
+}
+
+.package-line, .package-line-red { 
+    width: 35px; 
+    height: 2px; 
+    margin-bottom: 20px; 
+    background: #1ee925; 
+    transition: 0.3s ease;
+}
+
+/* --- 5. Content Colors on Hover (Fixed) --- */
+.package-card:hover .package-icon,
+.package-card:hover .package-icon-red,
+.package-card:hover h3,
+.package-card:hover p,
+.package-card:hover .details-link,
+.package-card:hover .details-link-red { 
+    color: #000000 !important; 
+}
+
+/* Line change on hover (background property usage) */
+.package-card:hover .package-line,
+.package-card:hover .package-line-red { 
+    background: #000000 !important; 
+}
+
+/* --- 6. Typography --- */
+.package-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.package-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- 7. Details Link Styles --- */
+.details-link, .details-link-red {
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 2px solid #1ee91e;
+    padding-bottom: 2px;
+    transition: 0.3s ease;
+    color: #000000; /* Default color */
+}
+
+/* Ensuring Link turns black on hover */
+.package-card:hover .details-link,
+.package-card:hover .details-link-red { 
+    color: #000000 !important; 
+    border-color: #000000 !important; 
+}
+
+
+
+/* ==========================================================================
+   COMMON & RESET STYLES
+   ========================================================================== */
+.works-section, 
+.works-breadcrumb-section, 
+.portfolio-intro, 
+.portfolio-grid-section {
+    background-color: #000000 !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. BREADCRUMB SECTION (Sub-page Top)
+   ========================================================================== */
+.works-breadcrumb-section {
+    padding: 60px 0 30px;
+}
+
+.main-works-title {
+    font-size: 35px;
+    font-weight: 800;
+    color: #ffffff !important;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.breadcrumb a {
+    color: #12e819 !important;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.breadcrumb a:hover, 
+.breadcrumb span {
+    color: #ffffff !important;
+}
+
+.breadcrumb span {
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   2. PORTFOLIO INTRO SECTION
+   ========================================================================== */
+.portfolio-intro {
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.latest-works-heading {
+    font-size: 40px;
+    font-weight: 900;
+    color: #ffffff !important;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.take-look {
+    color: #12e819 !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.works-description {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #bbbbbb !important;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* ==========================================================================
+   3. WORKS GRID & CARDS (Home & Sub-page)
+   ========================================================================== */
+.portfolio-grid-section {
+    padding-bottom: 80px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.work-card {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    cursor: pointer;
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.work-card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Overlay Styles --- */
+.work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: background 0.4s ease;
+}
+
+.work-card:hover .work-overlay {
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.work-overlay h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.work-overlay p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #12e819 !important; /* Subtitle Green for better look */
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   4. HOME PAGE HEADER & BUTTON (Index Only)
+   ========================================================================== */
+.works-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.works-title {
+    font-size: 50px;
+    font-weight: 800;
+    color: #ffffff !important;
+    margin: 0;
+}
+
+.works-subtitle {
+    color: #12e819 !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.view-all-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 2px solid #1ee939 !important;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.view-all-btn:hover {
+    background-color: #1ee939 !important;
+    color: #000000 !important;
+    transform: translateY(-3px);
+}
+
+
+
+/* --- About MJA Section Styles --- */
+.about-mja {
+    padding: 30px 0;
+    background-color: #000000;
+}
+
+.mja-about-header {
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.mja-about-banner {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.mja-about-banner img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.mja-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.mja-content-left {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.mja-info-box {
+    display: flex;
+    padding: 15px;
+    border-radius: 15px;
+    gap: 20px;
+    background-color: #ffffff;
+}
+
+.mja-icon-wrapper {
+    font-size: 24px;
+    color: #000000; /* আপনার সাইটের লাল রঙের সাথে ম্যাচ করা */
+}
+
+.mja-info-text h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.mja-info-text p {
+    font-size: 0.95rem;
+    color: #3f3f3f;
+    line-height: 1.6;
+}
+
+/* Philosophy Card Style - Full Image Overlay */
+.mja-content-right {
+    flex: 1;
+    min-width: 320px;
+}
+
+.mja-philosophy-card {
+    position: relative; /* টেক্সট পজিশন করার জন্য */
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%; /* কন্টেইনারের ফুল হাইট নিবে */
+    min-height: 450px; /* কার্ডের একটি মিনিমাম উচ্চতা */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: none;
+    cursor: pointer;
+}
+
+/* ইমেজ পুরো কার্ড কভার করবে */
+.mja-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.mja-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* মাউস নিলে হালকা জুম ইফেক্ট */
+.mja-philosophy-card:hover .mja-card-img img {
+    transform: scale(1.1);
+}
+
+/* টেক্সট বডি যা ইমেজের উপরে থাকবে */
+.mja-card-body {
+    position: relative;
+    z-index: 2; /* ইমেজের উপরে রাখার জন্য */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* সব লেখা কার্ডের নিচের দিকে থাকবে */
+    padding: 40px 30px;
+    /* টেক্সট স্পষ্ট করার জন্য ডার্ক গ্রাডিয়েন্ট */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.3) 50%, transparent 100%);
+}
+
+.mja-card-body span {
+    color: #12e819 !important; /* আপনার থিমের সবুজ কালার */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.mja-card-body h2 {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 10px 0;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.mja-card-body p {
+    font-size: 14px;
+    color: #dddddd; /* হালকা সাদা/ধূসর টেক্সট */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Clients Section --- (Unchanged) */
+.clients-section {
+    padding: 30px 0;
+    background-color: #000000;
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.client-logo img {
+    max-width: 120px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.client-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.view-more-container {
+    margin-top: 50px;
+}
+
+/* --- Updated Testimonial Section --- */
+.stories-section {
+    padding: 100px 0; /* Extra space for better look */
+    background-color: #0c0c0c; 
+    color: #fff;
+    overflow: hidden;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.testimonial-image-side {
+    flex: 1;
+    min-width: 300px; /* Adjusted min-width */
+}
+
+.feedback-box {
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+.feedback-box::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    border-bottom: 5px solid #11ff00;
+    border-right: 5px solid #00ff33;
+}
+
+.feedback-box img {
+    width: 100%;
+    display: block;
+}
+
+/* Slider Container Logic */
+.testimonial-text-side {
+    flex: 1.2;
+    min-width: 300px;
+    position: relative;
+}
+
+/* New: Testimonials stack korar jonno container */
+.testimonial-slider-container {
+    position: relative;
+    margin-top: 40px;
+    min-height: 250px; /* Content er height onujayi height fixed rakhbe */
+}
+
+.testimonial-content {
+    position: absolute; /* Slides stack on top of each other */
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateX(20px); /* Subtle slide-in effect */
+}
+
+/* Active Slide Style */
+.testimonial-content.active {
+    position: relative; /* Only active slide takes up space */
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.client-name {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.client-meta {
+    font-size: 13px;
+    color: #ff004f;
+    margin-bottom: 25px;
+    font-weight: 600;
+    display: block;
+}
+
+.quote-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #b7b9b7;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.testimonial-nav {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-arrow {
+    background: #d6d5d5;
+    color: #000000;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px; /* Optional: adds a bit of sharpness */
+}
+
+.nav-arrow:hover {
+    background: #51ff00;
+    transform: translateY(-3px);
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    padding: 40px 0 20px 0; 
+    background-color: #0c0c0c;
+    color: #fff;
+    text-align: center;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+/* --- Team Card with Light Blue Hover --- */
+.team-card {
+    background: #000000;
+    padding: 30px;
+    border-radius: 15px;
+    transition: all 0.4s ease; /* Smooth transition for all properties */
+    border: 1px solid transparent; /* Border pop-up control */
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    background: #090909; /* Dark Light Blue Background */
+    border-color: #080808; /* Light Blue Border */
+    box-shadow: 0 10px 25px rgba(8, 248, 4, 0.271); /* Soft Blue Glow */
+}
+
+/* Hover-e text color update */
+.team-card:hover .member-role {
+    color: #1afc0a; /* Role color changes to Light Blue on hover */
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fbfbfb; /* Default red border */
+    transition: 0.3s;
+}
+
+.team-card:hover .profile-img {
+    border-color: #b4f589; /* Hover korle image border-o blue hobe */
+}
+
+.profile-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.member-name { font-size: 22px; margin-bottom: 5px; letter-spacing: 1px; }
+
+.member-role {
+    color: #39f433;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* Social Icons */
+.social-links { display: flex; justify-content: center; gap: 15px; }
+
+.social-links a {
+    width: 40px; height: 40px;
+    background: #222; color: #fff;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    text-decoration: none; transition: 0.3s; font-size: 18px;
+}
+
+.social-links a:hover { 
+    background: #00ff1e; 
+    transform: rotate(360deg); 
+    color: #000;
+}
+
+/* --- Company Info Bar --- */
+.company-contact-info {
+    margin-top: 40px; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    border-top: 1px solid #222;
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+
+/* Link-er default style remove korar jonno eita dorkar */
+.info-item a {
+    text-decoration: none; /* Underline remove hobe */
+    color: inherit; /* P tag-er color inherit korbe */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Icon ebong Text-er majhkane gap */
+    transition: 0.3s ease;
+}
+
+.info-item { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.info-item i { 
+    font-size: 30px; 
+    color: #ffffff; 
+    transition: 0.3s ease;
+}
+
+.info-item p { 
+    font-size: 16px; 
+    color: #ccc; 
+    font-weight: 500; 
+}
+
+/* Hover Effect: Mouse nile kemon dekhabe */
+.info-item a:hover i {
+    transform: scale(1.1); /* Icon ektu boro hobe */
+    color: #1cff5c; /* Hover-e icon blue hoye jabe (Optional) */
+}
+
+.info-item a:hover p {
+    color: hsl(0, 0%, 100%); /* Hover-e text aro bright hobe */
+}
+/* --- Footer Section --- */
+.footer-section {
+    padding: 14px 0; 
+    background-color: #050505;
+    border-top: 1px solid #1a1a1a;
+    color: #666;
+    font-size: 12px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-company-name {
+    color: #eae7e7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.footer-company-name:hover {
+    color: #22f82d;
+    text-shadow: 0 0 8px rgba(248, 34, 34, 0.4);
+}
+
+.footer-bottom-links { list-style: none; display: flex; gap: 20px; padding: 0; margin: 0; }
+.footer-bottom-links li a { color: #d3d1d1; text-decoration: none; transition: 0.3s; }
+.footer-bottom-links li a:hover { color: #ff004f; }
+
+
+
+
+
+/* --- 8. Utility Classes --- */
+.shadow-card {
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+.border-bottom-red {
+    /* Bottom accent border color */
+    border-bottom: 10px solid #f3f3f3;
+}
+
+/* Breadcrumbs & Side Menu Helpers */
+.mja-breadcrumb {
+    font-size: 12px;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+.mja-breadcrumb span { color: #e91e63; }
+.mja-side-menu li { cursor: pointer; transition: 0.3s; }
+.mja-side-menu li:hover { color: #e91e63; padding-left: 5px; }
+.pricing-banner-red:hover { transform: scale(1.02); transition: 0.3s; }
+
+.service-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Pricing Page --- */
+.pricing-page {
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.pricing-header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.pricing-header p {
+    color: #b4b2b2;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.price-box {
+    background: #fff;
+    width: 320px;
+    border-radius: 15px;
+    overflow: visible; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.price-box:hover {
+    transform: translateY(-10px);
+}
+
+.price-head-red {
+    background: #36f029; 
+    padding: 40px 20px 60px;
+    color: rgb(4, 4, 4);
+    position: relative;
+    border-radius: 15px 15px 50% 50% / 15px 15px 20% 20%;
+}
+
+.price-head-red h2 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 800;
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: rgb(230, 229, 229);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 2px solid #000000;
+}
+
+.icon-circle i {
+    color: #000000;
+    font-size: 24px;
+}
+
+.price-body {
+    padding: 50px 20px 30px;
+}
+
+.feature-main {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+}
+
+.divider-small {
+    width: 40px;
+    height: 3px;
+    background: #1ee943;
+    margin: 15px auto;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+}
+
+.price-amount {
+    font-size: 26px;
+    font-weight: 900;
+    margin-top: 25px;
+    color: #000;
+}
+
+/* --- Service Details Section --- */
+.details-section { 
+    padding: 80px 0; 
+    font-family: 'Arial', sans-serif; 
+    background-color: #000000; /* সেকশন ব্যাকগ্রাউন্ড কালো */
+}
+
+/* Page Title & Breadcrumb */
+.page-title { 
+    font-size: 40px; 
+    font-weight: 900; 
+    color: #ffffff !important; 
+    margin-bottom: 10px; 
+}
+.page-title span { color: #12e819 !important; /* সবুজ হাইলাইট */ }
+
+.breadcrumb { 
+    font-size: 13px; 
+    font-weight: 700; 
+    color: #ffffff; 
+    letter-spacing: 1px; 
+    margin-bottom: 40px; 
+}
+.breadcrumb a { 
+    text-decoration: none; 
+    color: #12e819 !important; /* লিঙ্ক সবুজ */
+}
+.breadcrumb span { color: #ffffff !important; /* বর্তমান পেজ সাদা */ }
+
+/* Layout Grid */
+.content-grid { display: flex; gap: 40px; }
+.main-content { flex: 2.8; }
+.sidebar { 
+    flex: 1; 
+    border-left: 1px solid #1a1a1a; /* ডার্ক বর্ডার */
+    padding-left: 25px; 
+}
+
+/* Typography */
+.sub-title { 
+    font-size: 26px; 
+    font-weight: 800; 
+    margin: 30px 0 15px; 
+    color: #ffffff !important; /* টাইটেল সাদা */
+}
+.para-text { 
+    line-height: 1.8; 
+    color: #bbbbbb !important; /* হালকা ধূসর টেক্সট */
+    margin-bottom: 20px; 
+    font-size: 15px; 
+}
+
+/* Call to Action Banner (Green/Black Theme) */
+.cta-banner-red { 
+    background-color: #12e819; /* উজ্জ্বল সবুজ */
+    padding: 50px 20px; 
+    text-align: center; 
+    border-radius: 8px;
+    transition: 0.3s ease;
+    margin: 40px 0;
+}
+
+.cta-banner-red:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 25px rgba(18, 232, 25, 0.3); 
+}
+
+/* হাইপারলিঙ্ক থেকে আন্ডারলাইন সরানোর মূল কোড */
+.cta-banner-red a {
+    text-decoration: none !important; /* সব লিঙ্কের আন্ডারলাইন রিমোভ করবে */
+}
+
+/* বাটন স্টাইল */
+.white-btn-text { 
+    background: #000000; 
+    color: #ffffff !important; 
+    display: inline-block; 
+    padding: 15px 40px; 
+    font-size: 22px; 
+    font-weight: 900; 
+    border-radius: 50px; 
+    text-transform: uppercase;
+    text-decoration: none !important; /* বাটনের আন্ডারলাইন রিমোভ */
+}
+
+/* সাব-টেক্সট স্টাইল */
+.cta-subtext { 
+    display: block; /* নিচের লাইনে নেওয়ার জন্য */
+    color: #000000 !important; 
+    font-size: 20px; 
+    margin-top: 15px; 
+    font-weight: 700;
+    text-decoration: none !important; /* টেক্সট লিঙ্কের আন্ডারলাইন রিমোভ */
+}
+/* Sidebar Navigation */
+.sidebar-title { 
+    font-size: 16px; 
+    font-weight: 900; 
+    color: #12e819 !important; /* সাইডবার টাইটেল সবুজ */
+    margin-bottom: 5px; 
+    text-transform: uppercase;
+}
+.sidebar-line { 
+    width: 40px; 
+    height: 3px; 
+    background: #12e819; 
+    margin-bottom: 20px; 
+}
+
+.side-nav-list { list-style: none; padding: 0; }
+.side-nav-list li { 
+    padding: 12px 0; 
+    border-bottom: 1px solid #1a1a1a; 
+}
+.side-nav-list li a { 
+    text-decoration: none; 
+    color: #e4e3e3; 
+    font-size: 14px; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+.side-nav-list li a:hover { 
+    color: #12e819 !important; 
+    padding-left: 8px; 
+}
+.side-nav-list li.active a { 
+    color: #12e819 !important; 
+    font-weight: 800 !important; 
+}
+
+/* Image Box */
+.service-image-box { 
+    margin: 30px 0; 
+    width: 100%; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid #1a1a1a;
+}
+.service-image-box img { width: 100%; height: auto; display: block; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content-grid { flex-direction: column; }
+    .sidebar { border-left: none; border-top: 1px solid #1a1a1a; padding-left: 0; padding-top: 30px; }
+}
