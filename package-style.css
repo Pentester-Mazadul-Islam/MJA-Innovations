@@ -1,0 +1,530 @@
+/* ==========================================================================
+   package details
+
+/* Starter Package Page Styles */
+.package-page-wrapper {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 60px 20px;
+    color: #cacaca;
+}
+
+.package-details-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.back-link {
+    color: #24f715;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    transform: translateX(-5px);
+}
+
+.package-main-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    background: #161616;
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid #333;
+}
+
+.package-info-side h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin: 15px 0;
+}
+
+.main-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #24f715;
+    margin-bottom: 30px;
+}
+
+.info-block h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.target-box {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(36, 247, 21, 0.05);
+    border-left: 4px solid #24f715;
+}
+
+/* Pricing Side */
+.package-pricing-side {
+    background: #1f1f1f;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #444;
+}
+
+.price-tag {
+    text-align: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+.price-tag .amount {
+    font-size: 2.5rem;
+    color: #24f715;
+    margin: 10px 0;
+}
+
+.includes-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.includes-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.includes-list i {
+    color: #24f715;
+}
+
+.cta-button {
+    display: block;
+    text-align: center;
+    background: #24f715;
+    color: #000;
+    padding: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #fff;
+    box-shadow: 0 0 20px rgba(36, 247, 21, 0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .package-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Marketing Pricing Styles */
+.marketing-page-wrapper {
+    background-color: #0a0a0a;
+    padding: 80px 20px;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.marketing-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.marketing-header h1 {
+    font-size: 3rem;
+    color: #24f715;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card-mkt {
+    background: #161616;
+    border: 1px solid #333;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.pricing-card-mkt:hover {
+    transform: translateY(-10px);
+    border-color: #24f715;
+}
+
+.pricing-card-mkt.featured {
+    border: 2px solid #24f715;
+    background: #1c1c1c;
+    box-shadow: 0 10px 30px rgba(36, 247, 21, 0.1);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #24f715;
+    color: #000;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.card-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.card-price {
+    margin: 30px 0;
+}
+
+.card-price .amount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #24f715;
+}
+
+.card-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.card-features li {
+    margin-bottom: 12px;
+    color: #ccc;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-features i {
+    color: #24f715;
+    font-size: 0.8rem;
+}
+
+.mkt-btn {
+    display: block;
+    padding: 15px;
+    background: transparent;
+    border: 2px solid #24f715;
+    color: #24f715;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-highlight,
+.mkt-btn:hover {
+    background: #24f715;
+    color: #000;
+}
+
+.back-home-mkt {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-home-mkt a {
+    color: #888;
+    text-decoration: none;
+}
+
+/* Custom Plan Configuration Styles */
+.custom-page-wrapper {
+    background-color: #050505;
+    padding: 100px 20px;
+    color: #fff;
+}
+
+.custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.custom-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.back-link-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #888;
+    /* Default Gray color */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 10;
+    /* Jate onno kono layer er niche na thake */
+}
+
+.back-link-top i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.back-link-top:hover {
+    color: #24f715;
+    /* Your Green Theme color */
+    transform: translateX(-5px);
+    /* Hover korle bame halka move korbe */
+}
+
+.back-link-top:hover i {
+    transform: scale(1.2);
+}
+
+.hero-badge {
+    background: #24f715;
+    color: #000;
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.custom-header h1 {
+    font-size: 4rem;
+    margin: 20px 0;
+    font-weight: 900;
+}
+
+.hero-subtext {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #888;
+    line-height: 1.8;
+}
+
+/* Configurator Grid */
+.configurator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.module-block {
+    background: #0f0f0f;
+    border: 1px solid #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.security-border {
+    border: 1px solid rgba(36, 247, 21, 0.3);
+    box-shadow: inset 0 0 20px rgba(36, 247, 21, 0.05);
+}
+
+.module-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.module-title i {
+    font-size: 24px;
+    color: #24f715;
+}
+
+.module-title h3 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+/* Option List & Checkbox */
+.option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #151515;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.check-item:hover {
+    background: #1a1a1a;
+    border-color: #333;
+}
+
+.check-item input {
+    display: none;
+}
+
+.check-item .box {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.check-item input:checked+.box {
+    background: #24f715;
+    border-color: #24f715;
+}
+
+.check-item input:checked+.box:after {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #000;
+    font-size: 14px;
+    position: absolute;
+    left: 4px;
+    top: 1px;
+}
+
+.check-item .text strong {
+    display: block;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.check-item .text span {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.check-item input:checked~.text strong {
+    color: #24f715;
+}
+
+/* Discovery Card */
+.project-details-card {
+    background: #111;
+    padding: 60px;
+    border-radius: 24px;
+    border: 1px solid #222;
+}
+
+.project-details-card h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #24f715;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #ccc;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 15px;
+    color: #fff;
+    border-radius: 10px;
+    outline: none;
+}
+
+.field input:focus {
+    border-color: #24f715;
+}
+
+.field textarea {
+    height: 150px;
+    resize: none;
+}
+
+.radio-group {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    color: #06f50a;
+}
+
+.config-submit-btn {
+    width: 100%;
+    padding: 25px;
+    background: #24f715;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: 0.4s;
+}
+
+.config-submit-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 40px rgba(36, 247, 21, 0.4);
+    transform: translateY(-5px);
+}
+
+/* Mobile Fixes */
+@media (max-width: 1024px) {
+
+    .configurator-grid,
+    .input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-header h1 {
+        font-size: 2.8rem;
+    }
+}
